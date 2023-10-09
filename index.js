@@ -12,17 +12,10 @@ const authMiddleware = require("./utils/auth");
 
 const todoController = require("./controllers/todoController");
 
-
-
 dotenv.config();
 
-
-
 const app = express();
-
 const PORT = process.env.PORT || 8000;
-
-
 
 app.use(cors());
 
@@ -31,25 +24,15 @@ app.use(express.json());
 
 
 mongoose
-
  .connect(
-
   `mongodb+srv://ppcommercial31:punit12@cluster0.ogkgxal.mongodb.net/mernstack?retryWrites=true&w=majority&appName=AtlasApp`,
-
   { useNewUrlParser: true, useUnifiedTopology: true }
-
  )
-
  .then(() => {
-
-  console.log("Connected");
-
+  console.log("connected to database");
  })
-
  .catch((error) => {
-
-  console.error("Error connecting to MongoDB:", error);
-
+  console.error("error connecting to database:", error);
  });
 
 
